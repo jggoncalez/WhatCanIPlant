@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Can I Plant</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <h1>What Can I Plant?</h1>
+        <img src="https://placehold.co/400x400" alt="">
+        <h2>Tomato</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Temperature</th>
+                        <th>Humidity</th>
+                        <th>Light Intensity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id='temperature'>Loading</td>
+                        <td id='humidity'>Loading</td>
+                        <td id='lightIntensity'>Loading</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </main>
+
+    <script>
+        function getSensorData() {
+            fetch('/get_data/') 
+                .then(response => response.json()) 
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById('temperature').innerText = "Error";
+                        document.getElementById('humidity').innerText = "Error";
+                        document.getElementById('lightIntensity').innerText = "Error";
+                    } else {
+                        document.getElementById('temperature').innerText = data.temperature;
+                        document.getElementById('humidity').innerText = data.humidity;
+                        document.getElementById('lightIntensity').innerText = data.lightIntensity;
+                    }
+                })
+                
+                .catch(error => console.error('Error:', error));
+            }
+
+        setInterval(getSensorData, 3000);
+
+        document.addEventListener('DOMContentLoaded', getSensorData);
+    </script>
+</body>
+</html>
