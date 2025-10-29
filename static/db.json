@@ -1,0 +1,202 @@
+[
+  {
+    "plant": "Tomato",
+    "name_pt": "Tomate",
+    "name_jp": "トマト (tomato)",
+    "temperature_min_c": 21,
+    "temperature_max_c": 29,
+    "humidity_min": 65,
+    "humidity_max": 90,
+    "light_intensity": "high"
+  },
+  {
+    "plant": "Cauliflower",
+    "name_pt": "Couve-flor",
+    "name_jp": "カリフラワー (karifurawā)",
+    "temperature_min_c": 15,
+    "temperature_max_c": 24,
+    "humidity_min": 70,
+    "humidity_max": 95,
+    "light_intensity": "high"
+  },
+  {
+    "plant": "Cherry",
+    "name_pt": "Cereja",
+    "name_jp": "チェリーベルラディッシュ (cherī beru radisshu)",
+    "temperature_min_c": 10,
+    "temperature_max_c": 21,
+    "humidity_min": 50,
+    "humidity_max": 95,
+    "light_intensity": "medium"
+  },
+  {
+    "plant": "Orange",
+    "name_pt": "Laranja",
+    "name_jp": "オレンジ (orenji)",
+    "temperature_min_c": 15,
+    "temperature_max_c": 32,
+    "humidity_min": 50,
+    "humidity_max": 80,
+    "light_intensity": "high"
+  },
+  {
+    "plant": "Potato",
+    "name_pt": "Batata",
+    "name_jp": "じゃがいも (jagaimo)",
+    "temperature_min_c": 15,
+    "temperature_max_c": 21,
+    "humidity_min": 80,
+    "humidity_max": 95,
+    "light_intensity": "high"
+  },
+  {
+    "plant": "Pumpkin",
+    "name_pt": "Abóbora",
+    "name_jp": "かぼちゃ (kabocha)",
+    "temperature_min_c": 21,
+    "temperature_max_c": 32,
+    "humidity_min": 50,
+    "humidity_max": 70,
+    "light_intensity": "high"
+  },
+  {
+    "plant": "Radish",
+    "name_pt": "Rabanete",
+    "name_jp": "大根 (daikon)",
+    "temperature_min_c": 10,
+    "temperature_max_c": 21,
+    "humidity_min": 50,
+    "humidity_max": 95,
+    "light_intensity": "medium"
+  },
+  {
+    "plant": "Strawberry",
+    "name_pt": "Morango",
+    "name_jp": "いちご (ichigo)",
+    "temperature_min_c": 15,
+    "temperature_max_c": 27,
+    "humidity_min": 60,
+    "humidity_max": 80,
+    "light_intensity": "high"
+  },
+  {
+    "plant": "Carrot",
+    "name_pt": "Cenoura",
+    "name_jp": "にんじん (ninjin)",
+    "temperature_min_c": 10,
+    "temperature_max_c": 25,
+    "humidity_min": 50,
+    "humidity_max": 80,
+    "light_intensity": "medium"
+  },
+  {
+    "plant": "GreenBean",
+    "name_pt": "Vagem",
+    "name_jp": "インゲン (ingen)",
+    "temperature_min_c": 15,
+    "temperature_max_c": 28,
+    "humidity_min": 60,
+    "humidity_max": 85,
+    "light_intensity": "high"
+  },
+  {
+    "plant": "Corn",
+    "name_pt": "Milho",
+    "name_jp": "とうもろこし (tōmorokoshi)",
+    "temperature_min_c": 20,
+    "temperature_max_c": 32,
+    "humidity_min": 50,
+    "humidity_max": 80,
+    "light_intensity": "high"
+  },
+  {
+    "plant": "Wheat",
+    "name_pt": "Trigo",
+    "name_jp": "小麦 (komugi)",
+    "temperature_min_c": 15,
+    "temperature_max_c": 28,
+    "humidity_min": 40,
+    "humidity_max": 80,
+    "light_intensity": "medium"
+  },
+  {
+    "plant": "Eggplant",
+    "name_pt": "Berinjela",
+    "name_jp": "なす (nasu)",
+    "temperature_min_c": 21,
+    "temperature_max_c": 30,
+    "humidity_min": 60,
+    "humidity_max": 85,
+    "light_intensity": "high"
+  },
+  {
+    "plant": "Spinach",
+    "name_pt": "Espinafre",
+    "name_jp": "ほうれん草 (hōrensō)",
+    "temperature_min_c": 10,
+    "temperature_max_c": 22,
+    "humidity_min": 60,
+    "humidity_max": 90,
+    "light_intensity": "medium"
+  },
+  {
+    "plant": "Peas",
+    "name_pt": "Ervilha",
+    "name_jp": "えんどう (endō)",
+    "temperature_min_c": 12,
+    "temperature_max_c": 24,
+    "humidity_min": 55,
+    "humidity_max": 85,
+    "light_intensity": "medium"
+  },
+  {
+    "plant": "Beet",
+    "name_pt": "Beterraba",
+    "name_jp": "ビート (bīto)",
+    "temperature_min_c": 15,
+    "temperature_max_c": 25,
+    "humidity_min": 50,
+    "humidity_max": 80,
+    "light_intensity": "medium"
+  },
+  {
+    "plant": "Blueberry",
+    "name_pt": "Mirtilo",
+    "name_jp": "ブルーベリー (burūberī)",
+    "temperature_min_c": 18,
+    "temperature_max_c": 28,
+    "humidity_min": 60,
+    "humidity_max": 85,
+    "light_intensity": "high"
+  },
+  {
+    "plant": "Cabbage",
+    "name_pt": "Repolho",
+    "name_jp": "キャベツ (kyabetsu)",
+    "temperature_min_c": 14,
+    "temperature_max_c": 22,
+    "humidity_min": 65,
+    "humidity_max": 90,
+    "light_intensity": "medium"
+  },
+  {
+    "plant": "Garlic",
+    "name_pt": "Alho",
+    "name_jp": "にんにく (ninniku)",
+    "temperature_min_c": 12,
+    "temperature_max_c": 24,
+    "humidity_min": 50,
+    "humidity_max": 80,
+    "light_intensity": "low"
+  },
+  {
+    "plant": "Onion",
+    "name_pt": "Cebola",
+    "name_jp": "たまねぎ (tamanegi)",
+    "temperature_min_c": 15,
+    "temperature_max_c": 25,
+    "humidity_min": 55,
+    "humidity_max": 85,
+    "light_intensity": "medium"
+  }
+]

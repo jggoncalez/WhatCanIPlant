@@ -1,60 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>What Can I Plant</title>
 </head>
+
 <body>
     <header>
-
+      <h1>What Can I Plant?</h1>
     </header>
     <main>
-        <h1>What Can I Plant?</h1>
-        <img src="https://placehold.co/400x400" alt="">
-        <h2>Tomato</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Temperature</th>
-                        <th>Humidity</th>
-                        <th>Light Intensity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td id='temperature'>Loading</td>
-                        <td id='humidity'>Loading</td>
-                        <td id='lightIntensity'>Loading</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h1>You should plant...</h1>
+        <img id="main-image" src="{{ url_for('static', filename='images/default.webp') }}">
+        <h2 id="plant">Loading</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Light Intensity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id='temperature'>Loading</td>
+                    <td id='humidity'>Loading</td>
+                    <td id='lightIntensity'>Loading</td>
+                </tr>
+            </tbody>
+        </table>
         </div>
-        
+
     </main>
 
     <script>
-        function getSensorData() {
-            fetch('/get_data/') 
-                .then(response => response.json()) 
-                .then(data => {
-                    if (data.error) {
-                        document.getElementById('temperature').innerText = "Error";
-                        document.getElementById('humidity').innerText = "Error";
-                        document.getElementById('lightIntensity').innerText = "Error";
-                    } else {
-                        document.getElementById('temperature').innerText = data.temperature;
-                        document.getElementById('humidity').innerText = data.humidity;
-                        document.getElementById('lightIntensity').innerText = data.lightIntensity;
+        let plants = [];
+
+        fetch('static/db.json')
+          .then(r => r.json())
+          .then(data => {
+            plants = data;
+          })
+
+          .catch(error => console.error(error))
+
+
+        function check(t, h, l) {
+            const lightMap = { low: 30, medium: 50, high: 70 };
+
+            for (let p of plants) {
+                if (t >= p.temperature_min_c && t <= p.temperature_max_c &&
+                    h >= p.humidity_min && h <= p.humidity_max &&
+                    l >= lightMap[p.light_intensity]) {
+                    return `${p.plant}`;
+                }
+            }
+            return "No plants compatible";
+        }
+
+        function getData() {
+            fetch('/get_data/')
+                .then(r => r.json())
+                .then(d => {
+                    if (!d.error) {
+                        const t = parseFloat(d.temperature);
+                        const h = parseFloat(d.humidity);
+                        const l = parseFloat(d.lightIntensity);
+
+                        document.getElementById('temperature').innerText = t + '°C';
+                        document.getElementById('humidity').innerText = h + '%';
+                        document.getElementById('lightIntensity').innerText = l + '%';
+                        document.getElementById('plant').innerText = `${check(t, h, l)}`;
+                        document.getElementById('main-image').src = `/static/images/${check(t, h, l)}.webp`;
                     }
                 })
-                
-                .catch(error => console.error('Error:', error));
-            }
+                .catch(e => console.error(e));
+        }
 
-        setInterval(getSensorData, 3000);
-
-        document.addEventListener('DOMContentLoaded', getSensorData);
+        setInterval(getData, 3000);
+        getData();
     </script>
 </body>
+
 </html>
