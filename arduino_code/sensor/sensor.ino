@@ -23,15 +23,15 @@ void loop() {
                 int lightRaw = analogRead(LDRPIN);
                 int lightPercent = map(lightRaw, 0, 1023, 0, 100);
                 
-                // if (isnan(t) || isnan(h) || isnan(lightPercent)) {
-                //     Serial.println("ERROR");
-                // } else {
+                if (isnan(t) || isnan(h) || isnan(lightPercent)) {
+                    Serial.println("ERROR");
+                } else {
                     Serial.print(t);
                     Serial.print(";");
                     Serial.print(h);
                     Serial.print(";");
                     Serial.println(lightPercent);
-                // }
+                }
                 break;
         }
     }
